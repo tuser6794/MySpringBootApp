@@ -1,0 +1,37 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                // Get some code from a GitHub repository
+                git 'https://github.com/tuser6794/MySpringBootApp.git'
+
+                // Run Maven Wrapper Commands
+                sh "./mvnw compile"
+
+                echo 'Building the Project with maven compile'
+            }
+        }
+
+        stage('Test') {
+            steps {
+
+                // Run Maven Wrapper Commands
+                sh "./mvnw test"
+
+                echo 'Testing the Project with maven test'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+
+                // Run Maven Wrapper Commands
+                sh "./mvnw package"
+
+                echo 'Deploying the Project with maven package'
+            }
+        }
+    }
+}
