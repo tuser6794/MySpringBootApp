@@ -16,7 +16,7 @@ class MySpringBootAppApplicationTests {
 	
 	@Test
 	void contextLoads() {
-		assertThat(ref).isNotNull();
+		assertThat(newsController).isNotNull();
 	}
 
 }
