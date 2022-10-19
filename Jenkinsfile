@@ -33,23 +33,5 @@ pipeline {
                 echo 'Packaging the Project with maven package'
             }
         }
-        stage('Containerize') {
-            steps {
-
-                // Run Maven Wrapper Commands
-                sh "docker build -t myapp ."
-
-                echo 'Containerizing the App with Docker'
-            }
-        }
-        stage('Deploy') {
-            steps {
-
-                // Run Maven Wrapper Commands
-                sh "docker run -d -p 9090:9090 myapp"
-
-                echo 'Deploy the App with Docker'
-            }
-        }
     }
 }
