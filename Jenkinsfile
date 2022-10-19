@@ -34,14 +34,5 @@ pipeline {
             }
         }
         
-        stage('Deploy') {
-            steps {
-
-                // Run Maven Wrapper Commands
-                sh "java -jar ./target/MySpringBootApp-0.0.1-SNAPSHOT.jar"
-
-                echo 'Deploying the Project'
-            }
-        }
     }
 }
