@@ -37,7 +37,7 @@ pipeline {
             steps {
 
                 // Run Maven Wrapper Commands
-                sh "docker build -t myapp ."
+                sh "sudo docker build -t myapp ."
 
                 echo 'Containerizing the App with Docker'
             }
@@ -46,7 +46,7 @@ pipeline {
             steps {
 
                 // Run Maven Wrapper Commands
-                sh "docker run -d -p 9090:9090 myapp"
+                sh "sudo docker run -d -p 9090:9090 myapp"
 
                 echo 'Deploy the App with Docker'
             }
